@@ -14,7 +14,7 @@ class PrintEditionItem {
   set state(newState) {
     if (newState < 0) {
       this._state = 0;
-    } else if (newState > 0) {
+    } else if (newState > 100) {
       this._state = 100;
     } else {
       this._state = newState;
@@ -42,21 +42,21 @@ class Book extends PrintEditionItem {
 }
 
 class NovelBook extends Book {
-  constructor(name, releaseDate, pagesCount, state = 100, type = null, author) {
+  constructor(author, name, releaseDate, pagesCount, state = 100, type = null) {
     super(name, releaseDate, pagesCount, (state = 100), author);
     this.type = "novel";
   }
 }
 
 class FantasticBook extends Book {
-  constructor(name, releaseDate, pagesCount, state = 100, type = null, author) {
+  constructor(author, name, releaseDate, pagesCount, state = 100, type = null) {
     super(name, releaseDate, pagesCount, (state = 100), author);
     this.type = "fantastic";
   }
 }
 
 class DetectiveBook extends Book {
-  constructor(name, releaseDate, pagesCount, state = 100, type = null, author) {
+  constructor(author, name, releaseDate, pagesCount, state = 100, type = null) {
     super(name, releaseDate, pagesCount, (state = 100), author);
     this.type = "detective";
   }
